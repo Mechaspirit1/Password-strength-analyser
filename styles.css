@@ -54,6 +54,11 @@ ul{
 li{
     margin-left: -2%;
 }
+#advice{
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
 
 @media (max-width: 450px) {
     h1{

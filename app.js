@@ -30,7 +30,7 @@ function passRules(pass) { //parametro recebe o valor da variavel password
     else if (charNum <= 8){
         return "Weak Password";
     }
-    else if (charNum >= 9 && charNum <= 13) {
+    else if (charNum >= 9 && charNum <= 13){
         //se a senha passada pelo usuario conter pelo menos um caracter do array symbols e um do nums retornar "good password"
         if(symCount >= 1 && numCount >= 1){
             return "Good Password";
@@ -39,24 +39,26 @@ function passRules(pass) { //parametro recebe o valor da variavel password
             return "Weak Password";
         }
     }
-    else if (charNum >= 13) {
+    else{
         if(symCount >= 2 && numCount >= 2){
             return "Strong Password";
         }
-        else{
+        else if(symCount >= 1 && numCount >= 1){
             return "Good Password";
+        }
+        else{
+            return "Weak Password";
         }
     }
 }
 
 //Atualiza a pagina automaticamente conforme o input é digitado
-textBox.addEventListener("input", (e) => {
-    e.preventDefault();
+textBox.addEventListener("input", () => {
     list.innerHTML="";
     let password = textBox.value.trim(); //recebe o valor passado pelo usuario na caixa de texto
 
-    console.log("Info sent !");
-    console.log(password);
+    //console.log("Info sent !");
+    //console.log(password);
 
     const result = passRules(password); //define o parametro da função passRules como o valor da variavel password
     advice.textContent = result; //define que o texto do h2 advice seja o resulçtado da função passRules
@@ -65,12 +67,13 @@ textBox.addEventListener("input", (e) => {
     const listItem2 = document.createElement("li");
 
     const itemDesc1 = document.createTextNode("Use more numbers");
-    const itemDesc2 = document.createTextNode("Use more symbols")
+    const itemDesc2 = document.createTextNode("Use more symbols");
 
     //caso o resultado da função for weak password, criar um objeto de lista com o seguinte texto
     if(result === "Weak Password"){
         advice.style.color = `rgb(219, 32, 32)`;
-        advice.style.backgroundColor = `rgb(255, 187, 187)`
+        advice.style.backgroundColor = `rgb(255, 187, 187)`;
+
         listItem.appendChild(itemDesc1);
         listItem2.appendChild(itemDesc2);
         list.append(listItem);
@@ -78,14 +81,15 @@ textBox.addEventListener("input", (e) => {
     }
     else if(result === "Good Password"){
         advice.style.color = `rgb(185, 167, 0)`;
-        advice.style.backgroundColor = `rgb(250, 255, 187)`
+        advice.style.backgroundColor = `rgb(250, 255, 187)`;
     }
     else if (result === "Strong Password"){
         advice.style.color = `rgb(0, 196, 0)`;
-        advice.style.backgroundColor = `rgb(187, 255, 191)`
+        advice.style.backgroundColor = `rgb(187, 255, 191)`;
     }
     else{
         advice.innerHTML = "";
+        advice.style.backgroundColor = null;
     }
 });
 
