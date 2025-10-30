@@ -62,10 +62,9 @@ textBox.addEventListener("input", () => {
 
     const result = passRules(password); //define o parametro da função passRules como o valor da variavel password
     advice.textContent = result; //define que o texto do h2 advice seja o resulçtado da função passRules
-    advice.style.fontWeight = "400";
+
     const listItem = document.createElement("li");
     const listItem2 = document.createElement("li");
-
     const itemDesc1 = document.createTextNode("Use more numbers");
     const itemDesc2 = document.createTextNode("Use more symbols");
 
@@ -73,6 +72,8 @@ textBox.addEventListener("input", () => {
     if(result === "Weak Password"){
         advice.style.color = `rgb(219, 32, 32)`;
         advice.style.backgroundColor = `rgb(255, 187, 187)`;
+        advice.style.border = "solid"
+        advice.style.borderWidth = "3px"
 
         listItem.appendChild(itemDesc1);
         listItem2.appendChild(itemDesc2);
@@ -90,6 +91,7 @@ textBox.addEventListener("input", () => {
     else{
         advice.innerHTML = "";
         advice.style.backgroundColor = null;
+        advice.style.border = null;
     }
 });
 
