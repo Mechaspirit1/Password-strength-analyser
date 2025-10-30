@@ -10,18 +10,24 @@ h2{
     font-size: 25px;
     font-weight: 200;
 }
+p{
+    font-size: 20px;
+    font-weight: 200;
+}
 input{
-    font-size: 15px;
+    margin-top: 3%;
+    font-size: 20px;
     padding: 20px 5px 20px 5px;
     border-radius: 10px;
     border-style: solid;
     border-color:rgb(0, 102, 255);
+    text-align: center;
 }
 input:active{
     background-color: rgb(223, 223, 223);
 }
 button{
-    font-size: 15px;
+    font-size: 20px;
     padding: 20px 30px 20px 30px;
     color: white;
     background-color: rgb(0, 102, 255);
@@ -44,4 +50,13 @@ form{
 }
 ul{
     list-style-type: none;
+}
+li{
+    margin-left: -2%;
+}
+
+@media (max-width: 450px) {
+    h1{
+        font-size: 35px;
+    }
 }
