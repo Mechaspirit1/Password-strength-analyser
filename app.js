@@ -84,7 +84,7 @@ textBox.addEventListener("input", () => {
         advice.style.color = `rgb(185, 167, 0)`;
         advice.style.backgroundColor = `rgb(250, 255, 187)`;
     }
-    else if (result === "Strong Password"){
+    else if(result === "Strong Password"){
         advice.style.color = `rgb(0, 196, 0)`;
         advice.style.backgroundColor = `rgb(187, 255, 191)`;
     }
